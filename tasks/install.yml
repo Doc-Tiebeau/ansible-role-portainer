@@ -23,10 +23,11 @@
 #   debug:
 #     msg: "{{ portainer_docker.ansible_facts.docker_container }}"
 
-- set_fact:
+- name: "set fact portainer_is_running"
+  set_fact:
     portainer_is_running: "{{ portainer_docker.ansible_facts.docker_container.State.Running }}"
 
-- set_fact:
+- name: "set fact portainer_endpoint"
     portainer_endpoint: "http://{{ portainer_docker.ansible_facts.docker_container.NetworkSettings.IPAddress }}:{{ host_port }}/api"
 
 - name: "Check!!!"
