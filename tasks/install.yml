@@ -28,6 +28,7 @@
     portainer_is_running: "{{ portainer_docker.ansible_facts.docker_container.State.Running }}"
 
 - name: "set fact portainer_endpoint"
+  set_fact:
     portainer_endpoint: "http://{{ portainer_docker.ansible_facts.docker_container.NetworkSettings.IPAddress }}:{{ host_port }}/api"
 
 - name: "Check!!!"
