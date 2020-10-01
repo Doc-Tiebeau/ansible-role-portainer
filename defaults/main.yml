@@ -32,10 +32,11 @@ admin_user: admin
 admin_password: password
 
 # Endpoints
+# Types: 1 (Docker environment), 2 (Agent environment), 3 (Azure environment), 4 (Edge Agent environment) or 5 (Local Kubernetes environment)
 endpoints:
-  - { name: local, url: "" }
-  - { name: remote1, url: "tcp://1.2.3.4:2375" }
-  - { name: remote2, url: "tcp://5.6.7.8:2375" }
+  - { name: local, url: "", type: 1 }
+  - { name: remote1, url: "tcp://1.2.3.4:2375", type: 2 }
+  - { name: remote2, url: "tcp://5.6.7.8:2375", type: 2 }
 
 # LDAP
 ldap_account: "uid=account_name,ou=Users,o=org,dc=mycompany,dc=com"
